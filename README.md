@@ -59,3 +59,10 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Hunting Booking Module
+
+This demo adds `Guide` and `HuntingBooking` models with API endpoints:
+
+- `GET /api/guides` — returns active guides and supports `min_experience` filtering
+- `POST /api/bookings` — creates bookings with availability and participant count validation
