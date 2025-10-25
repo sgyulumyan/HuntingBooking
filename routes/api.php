@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\GuideController;
 use Laravel\Passport\Http\Controllers\AccessTokenController;
@@ -24,6 +25,8 @@ Route::group(['prefix' => 'oauth', 'middleware' => ['api']], function () {
     Route::post('/personal-access-tokens', [PersonalAccessTokenController::class, 'store']);
     Route::delete('/personal-access-tokens/{token_id}', [PersonalAccessTokenController::class, 'destroy']);
 });
+
+Route::post('/auth/register', [RegisterController::class, 'store']);
 
 Route::middleware(['auth:api'])->group(function () {
     Route::get('/guides', [GuideController::class, 'index']);
